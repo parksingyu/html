@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM객체</title>
+		
+	</head>
+	
+	<body>
+		<div id="target3"><img id="img1"></div>
+		<script>
+			
+			window.onload = function(){
+				defaultimg();
+			}
+			
+			function defaultimg(){
+				document.getElementById("img1").src = "../img/호랑이.png"
+				start();
+			}
+			
+			function start(){
+				id = setInterval(changeNode,1000);
+			}
+			
+			var i = 0;
+			function changeNode(){
+				//console.log("test");
+				imgarr = ["컴퓨터.png", "식품.png", "호랑이.png", "구름.png", "커피.png"];
+				console.log("test");
+				if ( i >= 5 ){
+					i = 0;
+				}
+				document.getElementById("target3").firstChild.src = "../img/" + imgarr[i];
+				document.getElementById("target3").firstChild.width = 200;
+				i++;                           
+			}
+		</script>
+	</body>
+</html>
+
+
+
+
+

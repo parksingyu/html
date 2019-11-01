@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>폼을 이용한 문제</title>
+		<script>
+			function proc1(){
+				var f = document.fm;
+				var nm = f.nm.value;
+				var gender = f.gender.value;
+				
+				var hobby = "";
+				var str = "";
+				str += nm + "씨! \n";
+				str += "당신은 " + gender + "이고, \n";
+				
+				 for(var i = 0; i < f.hobby.length; i++){
+					 if(f.hobby[i].checked){
+					 	hobby += f.hobby[i].value + ", ";
+					} else if (f.hobby.length==0){
+						hobby += "취미 없음 ";
+					}
+				}
+				
+				
+				str +=	"취미는 ";
+				
+				var last = hobby.lastIndexOf(",");
+				str += hobby.substring(0, last);
+				
+				str +=	"이군요!";
+				f.ar.value = str;
+			}
+		</script>
+	</head>
+	<body>
+		<form name="fm" onsubmit="return false;">
+			<p>이름 : <input type="text" size="15" name="nm"></p>
+			<p>성별 : <input type="radio" name="gender" value="남자" checked>남&nbsp;&nbsp;&nbsp;<input type="radio" value="여자" name="gender">여</p>
+			<p>
+			취미: <input type="checkbox" name="hobby" value="여행" checked>여행&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="독서">독서&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="영화감상" checked>영화감상&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="바둑">바둑&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="장기">장기&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="등산" checked>등산&nbsp;&nbsp;
+			<input type="checkbox" name="hobby" value="낚시">낚시&nbsp;&nbsp;
+			</p>
+			
+			<button onclick="proc1()">결과 출력</button>
+			<br><br>
+			<textarea name="ar" rows="15" cols="75"></textarea>
+		</form>
+	</body>
+</html>

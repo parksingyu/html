@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>테이블 스타일</title>
+	</head>
+	<style>
+		table, td, th {
+			border : 1px solid black;
+		}
+		
+		th {
+		text-align : center;}
+		
+		table{
+			border-collapse : collapse; /* 자주보는 엑셀같이 바뀐다.*/
+			background-color : powderblue;
+			color : red;  /* 글씨 컬러는 font-color라고 하지 않고 그냥 color라고 한다.*/
+			text-align : right;
+			}
+		/* */
+		<!-- -->
+		caption{
+			caption-side : bottom;  /* top, bottom */
+		}
+	
+	</style>
+	
+	<body>
+		<table>
+			<caption>주소록</caption>
+			<tr>
+				<th>이름</th>
+				<th>이메일</th>
+			</tr>
+			<tr>
+				<td>박신규</td>
+				<td>taijijr92@naver.com</td>
+			</tr>
+			<tr>
+				<td>진주호</td>
+				<td>taijijr92@hanmail.net</td>
+			</tr>
+			<tr>
+				<td>유지상</td>
+				<td>taijijr92@gmail.com</td>
+			</tr>
+			
+			
+		</table>
+	</body>
+</html>

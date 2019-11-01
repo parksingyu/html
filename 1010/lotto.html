@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Math 객체</title>
+	<style>
+		.lot{text-align:center; width:30px; height:30px; border-radius:50px; float:left; background-color:powderblue;}
+		.clear{clear:both;}
+	</style>
+	<script>
+		//Math.random()*10 : 0~9
+		//Math.floor():소수점 버림, 정수반환
+		//Math.ceil():소수점 올림, 정수반환
+		//Math.round():소수점 반올림, 정수반환
+		////var random=Math.floor(Math.random()*10+1);
+		
+		
+		//1~10까지의 랜덤수를 발생 후 프롬프트를 사용하여 
+		//사용자가 맞추는 프로그램을 작성하세요.
+		//틀리면 alert("틀렸습니다"); prompt 다시 띄우기
+		//맞추면 alert("00번만에 맞추셨습니다."); prompt 끝
+		/* var cnt=0;
+		
+		function ran(){
+			var a=prompt("1~10까지의 수를 입력하세요.(0또는 확인 시 종료)");
+			if(a=="0"||a==""){
+				alert("종료합니다.");
+			}else if(a!=random){
+				cnt++;
+				alert("틀렸습니다.");
+				ran();
+			}else{
+				cnt++;
+				alert(cnt+"번 만에 맞추셨습니다.")
+				cnt=0;
+			}
+		} */
+		
+		//가위바위보 게임
+		//컴퓨터는 랜덤, 사용자는 입력받아서
+		//출력은 컴퓨터가 가위로 이겼습니다. 사용자가 바위로 이겼습니다. 등
+/* 		function rsp(){
+			var rspNum=Math.floor(Math.random()*3);
+			var rsp=["가위", "바위", "보"];
+			var userRsp=prompt("가위바위보 중 하나를 내주세요.");
+			if(rspNum==0){
+				if(userRsp=="바위"){
+					alert("사용자가 "+userRsp+"로 이겼습니다.");
+				}else if(userRsp=="보"){
+					alert("컴퓨터가 "+rsp[0]+"로 이겼습니다.");
+				}else{alert("비겼습니다.");}
+			}else if(rspNum==1){
+				if(userRsp=="보"){
+					alert("사용자가 "+userRsp+"로 이겼습니다.");
+				}else if(userRsp=="가위"){
+					alert("컴퓨터가 "+rsp[1]+"로 이겼습니다.");
+				}else{alert("비겼습니다.");}
+			}else{
+				if(userRsp=="가위"){
+					alert("사용자가 "+userRsp+"로 이겼습니다.");
+				}else if(userRsp=="바위"){
+					alert("컴퓨터가 "+rsp[2]+"로 이겼습니다.");
+				}else{alert("비겼습니다.");}
+			}
+		} */
+		
+		//로또 프로그램을 만드세요.(1부터 45중 6개 번호 추첨하는 걸 5번)
+		//function lotto(){
+			var lottoNum=new Array(6);
+			for(var i=0; i<lottoNum.length; i++){
+				var lottoRan=Math.floor(Math.random()*45+1);
+				lottoNum[i]=lottoRan;
+				for(var j=0; j<i; j++){
+					if(lottoNum[j]==lottoNum[i]){
+						i--;
+						break;
+					}
+				}
+			}
+			//return lottoNum;
+			
+			
+		var strhtml="";
+		for(var i=0; i<5; i++){
+			for(var j=0; j<6; j++){
+				strhtml+="<div class='lot'>"+lottoNum[j]+"</div>";
+			}
+			strhtml+="<div class='clear'>"+"</div>";
+		}
+			
+		//}
+		
+
+		
+		window.onload=function(){
+			document.getElementById("lotto").innerHTML=strhtml;
+		}
+		
+		
+		
+	</script>
+	</head>
+	<body>
+		<button onclick="ran()">랜덤수 맞추기</button><br><br>
+		
+		<div id="lotto"></div>
+		
+	</body>
+</html>

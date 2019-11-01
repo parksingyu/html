@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>단수출력</title>
+	<style>
+		p{
+			font-size : 15px;
+		}
+		
+		#disum{
+			text-align : center;
+			width : 70%;
+			margin : auto;
+			column-count : 2;
+		}
+		
+		#di1{
+			width : 100%;
+			height : 700px;
+			background-color : pink; 
+			float : left;
+			text-align : center;
+		}
+		
+		#di2{
+			width : 100%;
+			height : 700px;
+			background-color : powderblue;
+			float : left;
+			text-align : center;
+		}
+		
+		textarea{
+			text-align : center; 
+			font-size : 15px;
+			
+		}
+	</style>
+	
+	<script>
+	function gugudan(){
+		var a = document.getElementById("txtA").value;
+		var sum;
+		sum = a + " * 1 = "+ a * 1 + "\n";
+		
+		for ( var i = 2; i<=9; i++){
+			sum += a + " * " + i + " = " + a * i + "\n";
+		}
+		document.getElementById("ta").value = sum;
+	}
+	
+	function sgugudan(){
+		var sum;
+		var a = document.getElementById("se").value;
+		sum = "<br>";
+		
+		for ( var i = 1; i<=9; i++){
+			sum += a + " * " + i + " = " + a * i + "<br>";
+		}
+		document.getElementById("sw").innerHTML = sum;
+	}
+	
+	</script>
+	
+	</head>
+	<body>
+		<div id="disum">
+			<div id="di1">
+				<h2>text입력필드에서 단을 입력받으면 textarea에 출력</h2>
+				<p>입력한 값을 script에서 value를 이용해서 가져가서</p>
+				<p>textarea에 출력 할때에도 value = 값 형태로 출력한다.</p>
+				<p>줄을 바꾸기 위해서는 \n을 사용한다</p>
+				<br>
+				<input type="text" id="txtA" style="width:100px;">
+				<button onclick="gugudan();">출력</button>
+				<br><br><br>
+				<textarea id="ta" cols=30 rows=10 > </textarea>
+			</div>
+			
+			<div id="di2">
+				<h2>select로 단을 선택하고 div에 출력</h2>
+				<p>select에서 선택한 값을 onchange에서 value를 이용해서 가져가서 div에 출력한다.</p>
+				<p>div에 출력하기 위해서 innerHTML = 값 형태로 출력한다.</p>
+				<p>줄을 바꾸기 위해서는 br을 사용한다.</p>
+				<br>
+				<select id ="se" onchange="sgugudan();">
+				<!-- <select id ="se" onclick="sgugudan();"> -->
+					<option value="2">2단</option>
+					<option value="3">3단</option>
+					<option value="4">4단</option>
+					<option value="5">5단</option>
+					<option value="6">6단</option>
+					<option value="7">7단</option>
+					<option value="8">8단</option>
+					<option value="9">9단</option>
+				</select>
+				<br><br>
+				<div id="sw"></div>
+			</div>
+		</div>
+	</body>
+</html>

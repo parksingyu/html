@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>calendar</title>
+	</head>
+	<style>
+		td{
+			border : 5px solid #d8f3de;
+			padding : 20px; 
+			margin : 20px;
+			font-size : 25px;
+			text-align : center;
+		}
+	</style>
+	<script>
+		var now = new Date();
+		var n = now.getFullYear();
+		var j = (now.getMonth()+1);
+		
+		function proc2(){
+				var rect = {
+				getArea : function(){
+					j--;
+					if (j < 1){
+						j = 12;
+						n--;
+					}
+					return j;
+				}
+			} 
+			a = rect.getArea();
+			document.getElementById('taa').innerHTML = a;
+			table1();
+		}
+		
+		function proc3(){
+			var rect = {
+			getArea : function(){
+				j++;
+				if (j > 12){
+					j = 1;
+					n++;
+				}
+				return j;
+			}
+		} 
+			a = rect.getArea();
+						
+			document.getElementById('taa').innerHTML = a;
+			table1();
+		}
+		
+		function table1(){
+			
+			var i = j-1;
+			var strhtml = "";
+			strhtml += "<table>";
+			strhtml += "<tr>";
+			strhtml += "<td onclick=\"proc2()\">";
+			strhtml += "&lt;";
+			strhtml += "</td>";
+			strhtml += "<td colspan=5>";
+			strhtml +=  n + "년 " + j +"월"; //년 -> now.getFullYear() /월 ->(now.getMonth()+1)
+			strhtml += "</td>";
+			strhtml += "<td onclick=\"proc3()\">";
+			strhtml += "&gt;";
+			strhtml += "</td>";
+			strhtml += "</tr>";
+			strhtml += "<tr>";
+			strhtml += "<td>";
+			strhtml += "일";
+			strhtml += "</td>";
+			strhtml += "<td>";
+			strhtml += "월";
+			strhtml += "</td>";
+			strhtml += "<td>";
+			strhtml += "화";
+			strhtml += "</td>";
+			strhtml += "<td>";
+			strhtml += "수";
+			strhtml += "</td>";
+			strhtml += "<td>";
+			strhtml += "목";
+			strhtml += "</td>";
+			strhtml += "<td>";
+			strhtml += "금";
+			strhtml += "</td>";
+			strhtml += "<td>";
+			strhtml += "토";
+			strhtml += "</td>";
+			strhtml += "</tr>";
+			
+			var a = 1;
+			var b = 1;
+			 //10월이면 9라고 입력.
+			var startday = new Date(n,i,1); // 2
+			startday = startday.getDay();
+			var lastDay = (new Date(n,i+1,0)).getDate(); //10월의 마지막날.
+			
+			//var day = new Date(2019,9,1); // 2
+			while (true){
+				if (  a % 7 == 1){
+					strhtml += "<tr>";
+				}
+					if ( b > lastDay){  //숫자가 월의 마지막 날까지만 출력한다.
+						strhtml += "<td>";
+						strhtml += "";	
+						strhtml += "</td>";	
+					} 
+					 else if( startday >= a ){ //요일만큼 공백을 출력한다.
+						strhtml += "<td>";
+						strhtml += "";	
+						strhtml += "</td>";
+					} 
+ 					else {
+						strhtml += "<td>"; // 그 외에는 숫자를 +1 출력한다.
+						strhtml += b;
+						strhtml += "</td>";
+						b++;
+					}
+				if ( a % 7 == 0){
+					strhtml += "</tr>";
+				}
+				a++;
+				if ( a == 36){
+					break;
+				}
+			}
+			strhtml += "</table>";
+			document.getElementById("taa").innerHTML = strhtml;
+	}
+	    window.onload = function() {
+		table1();
+	}
+	</script>
+	<body>
+		<div id="taa" onclick="table1();"> </div>
+	</body>
+</html>

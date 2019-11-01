@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<style>
+		#panel, #flip{
+			text-align : center;
+			padding : 5px;
+			background-color : #e5eecc;
+			border : 1px solid #c3c3c3;
+			cursur : pointer; /*손가락 표시로 표시하는거*/
+		}
+		
+		#flip ul li{
+			list-style : none;
+			display:inline-block;
+			margin : 0 30px;
+		}
+		
+		#panel ul li{
+			list-style : none;  /*앞에 점 없어지게 하기*/
+			margin : 0 30px;
+		}
+		
+		#panel{
+			display:none;  /*밑에 있는 div 사라짐.*/
+		}
+		
+
+		
+
+	</style>
+	
+	<script>
+		$(document).ready(function(){
+			//$("#flip").click(function(){   /*클릭했을때*/
+			$(document).on("mouseover", "#flip", function(){
+			
+				if($("#panel").css("display") == "none"){
+					$("#panel").slideDown(0);
+				}else {
+					$("#panel").slideUp();
+				} 
+				
+				/* $("#panel").slideToggle("slow"); */
+			});
+		});
+	</script>
+	
+	</head>
+	<body>
+		<div id="flip">
+			<ul>
+				<li>메뉴1</li>
+				<li>메뉴2</li>
+				<li>메뉴3</li>
+				<li>메뉴4</li>
+				<li>메뉴5</li>
+			</ul>
+			
+		</div>
+		<div id = "panel" class="fade">
+			<ul class="menu">
+				<li>서브메뉴1</li>
+				<li>서브메뉴2</li>
+				<li>서브메뉴3</li>
+				<li>서브메뉴4</li>
+				<li>서브메뉴5</li>
+			</ul>
+		</div>
+	</body>
+</html>

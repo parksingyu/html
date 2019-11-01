@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>array</title>
+		<style>
+		
+		</style>
+		
+		<script>
+			/*
+			함수 하나를 생성한 후 (함수명 : call)
+			함수 안에서 prompt로 자기 이름, 나이를 입력 받아
+			배열안에 넣고, 출력하세요.
+			*/
+			/*
+				지역변수 : 
+				함수 안에서만 사용 가능
+				함수 안에서 선언된 변수
+				다른 함수에서도 똑같은 이름으로 사용 가능
+				함수가 종료되면 소멸한다.
+				
+				전역변수:
+				함수 외부에서 선언된 변수
+				웹 페이지 상의 모든 스크립트와 모든 함수는 전역변수를 사용할 수 있다.
+				전역변수는 사용자가 웹페이지를 닫으면 소멸된다.
+			*/
+			
+			/*
+			var name = prompt("이름을 입력하세요");
+			var age = prompt("나이를 입력하세요");
+			var arr = new Array();
+			arr[0] = name; //문자열
+			arr[1] = age;
+			
+			function call(){
+				document.write(arr); //숫자형
+			}*/
+			
+			
+			function add(){
+				var a = document.getElementById("txtA").value;
+				var b = document.getElementById("txtB").value;		
+				var sum;
+				sum = a*1 + b*1;
+				document.getElementById("sumadd").value = sum;
+				document.getElementById("sum").value = sum;
+			}
+			
+			function minus(){
+				var a = document.getElementById("txtA").value;
+				var b = document.getElementById("txtB").value;
+				var sum;
+				sum = a*1 - b*1;
+				document.getElementById("summinus").value = sum;
+				document.getElementById("sum").value = sum;
+			}
+			
+			function multiple(){
+				var a = document.getElementById("txtA").value;
+				var b = document.getElementById("txtB").value;
+				var sum;
+				sum = (a*1) * (b*1);
+				document.getElementById("summultiple").value = sum;		
+				document.getElementById("sum").value = sum;
+			}
+			
+			function divide (){
+				var a = document.getElementById("txtA").value;
+				var b = document.getElementById("txtB").value;
+				var sum;
+				sum = (a*1) / (b*1);
+				document.getElementById("sumdivide").value = sum;
+				document.getElementById("sum").value = sum;
+			}
+			
+			function finallyimdone(){
+				var a = document.getElementById("txtA").value;
+				var b = document.getElementById("txtB").value;
+				var sum, sum1, sum2, sum3;
+				sum0 = (a*1) + (b*1);
+				sum1 = (a*1) - (b*1);
+				sum2 = (a*1) * (b*1);
+				sum3 = (a*1) / (b*1);
+				document.getElementById("sumadd").value = sum0;
+				document.getElementById("summinus").value = sum1;
+				document.getElementById("summultiple").value = sum2;
+				document.getElementById("sumdivide").value = sum3;
+			}
+			
+			function add(){
+				var a = document.getElementById("txtA").value;
+				var b = document.getElementById("txtB").value;		
+				var sum;
+				sum = a*1 + b*1;
+				document.getElementById("sumadd").value = sum;
+				document.getElementById("sum").value = sum;
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		<!--  <button value="눌러라" onclick="call();">눌러라!!!</button>-->
+		txtA : <input type="text" id="txtA" size="20"><br>
+		txtB : <input type="text" id="txtB" size="20"><br>
+		
+		<button value="" onclick="add();">덧셈버튼</button>
+		<button value="" onclick="minus();">뺄셈버튼</button>
+		<button value="" onclick="multiple();">곱셈버튼</button>
+		<button value="" onclick="divide();">나눗셈버튼</button>
+		<button value="" onclick="finallyimdone();">모두 계산</button>
+		
+		<br><br>
+		덧셈 결과   : <input type="text" id="sumadd" size="20"><br>
+		뺄셈 결과   : <input type="text" id="summinus" size="20"><br>
+		곱셈 결과   : <input type="text" id="summultiple" size="20"><br>
+		나눗셈 결과 : <input type="text" id="sumdivide" size="20"><br>
+	             	<input type="text" id="sum" size="20"><br>
+		
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Shopping Cart</title>
+		<style>
+			table{
+				border-collapse : collapse; /*테이블 안에 선 생기게 하기 위함. 1*/
+			}
+			
+			td{
+				border: 1px solid black;  /*테이블 안에 선 생기게 하기 위함. 2*/
+			}
+		</style>
+		
+		<script>
+			
+			function sum(){
+				var a = document.getElementById("comp1").value;
+				var b = document.getElementById("t1").value;
+				var c = document.getElementById("mus1").value;
+				var d = document.getElementById("mov1").value;
+				
+				document.getElementById("comp2").value = a * 2000000;
+				document.getElementById("t2").value = b * 50000;
+				document.getElementById("mus2").value = c * 1000;
+				document.getElementById("mov2").value = d * 5000;
+			}
+			
+			function func(){
+				window.parent.location.href="main.html";
+			}
+		
+		</script>
+	</head>
+	<body>
+		<h2>Shopping Cart</h2>
+		<table>
+			<tr>
+				<td>품목</td>
+				<td>가격</td>
+				<td>수량</td>
+				<td>합계</td>
+			</tr>
+			<tr>
+				<td>컴퓨터세트</td>
+				<td>2,000,000원</td>
+				<td><input type="text" id="comp1" value="0"></td>
+				<td><input type="text" id="comp2"value="0"></td>
+			</tr>
+			<tr>
+				<td>티셔츠</td>
+				<td>50,000원</td>
+				<td><input type="text" id="t1" value="0"></td>
+				<td><input type="text" id="t2" value="0"></td>
+			</tr>
+			<tr>
+				<td>음악파일</td>
+				<td>1,000원</td>
+				<td><input type="text" id="mus1" value="0"></td>
+				<td><input type="text" id="mus2" value="0"></td>
+			</tr>
+			<tr>
+				<td>영화파일</td>
+				<td>5,000원</td>
+				<td><input type="text" id="mov1" value="0"></td>
+				<td><input type="text" id="mov2" value="0"></td>
+			</tr>
+		</table>
+		
+		<br>
+		<button onclick="sum()">계산</button>
+		<button>구매</button>
+		<button onclick="javascript:history.go(0);">초기화</button>
+		<br><br>
+		<!-- <a href="컴퓨터.html"> Back to Home</a> -->  
+		<a href="" onclick="func();"> Back to Home</a>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습 2</title>
+</head>
+<body>
+<form action="입력양식_결과.html" method="post">
+	<h1>회원 가입 화면</h1>
+	이름: <input type="text" name="text"><br><br> 
+	주소: <input type="text" name="text"><br><br>
+	email: <input type="email" name="email"><br><br>
+	
+	<input type="radio" name="gender" value="male">Male<br><br>
+	<input type="radio" name="gender" value="female">Female<br><br>
+	<!-- radio에서 둘중 하나만 체크하려면 name을 같게 하면 된다. -->
+	
+	
+	<input type="submit" value="send">
+	<input type="button" value="원래대로" onclick="javascript:history.go(0);">
+</form>
+</body>
+</html>

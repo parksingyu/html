@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM(document object model)</title>
+		<script>
+			function proc1(){
+				var domul = document.getElementsByTagName("ul")[0];
+				var domlist = domul.getElementsByTagName("li");
+				
+				for(var i = 0; i<domlist.length; i++){
+					vimg = domlist[i].firstChild.data; 		//li안에 내용(텍스트를 가져온다)
+					imgC = document.createElement("img");	//<img>태그를 만든다.
+					imgC.src = "../img/" + vimg + ".png";	//<img src='안에 있는 내용'>
+					imgC.width = 100;
+					imgC.height = 100;
+					
+					domlist[i].appendChild(imgC);
+				}
+			}
+			
+			function proc2(ele){
+				vimg = ele.firstChild.data;
+				imgC = document.createElement("img");
+				imgC.src = "../img/" + vimg + ".png";
+				imgC.width = 100;
+				imgC.height = 100;
+				
+				ele.appendChild(imgC);
+			}
+			
+			function srcChange(){
+				imgarr = ["컴퓨터.png", "식품.png", "호랑이.png", "구름.png", "커피.png"];
+				idx = Math.floor(Math.random() * imgarr.length);
+				document.getElementById("img1").firstChild.src = "../img/" + imgarr[idx];
+				document.getElementById("img1").firstChild.width = 200;
+				document.getElementById("img1").firstChild.height = 200;
+			}
+			
+			function srcChange2(){
+				id = setInterval(srcChange3,1000);
+			}
+			
+			function srcChange3(){
+				imgarr = ["컴퓨터.png", "식품.png", "호랑이.png", "구름.png", "커피.png"];
+				idx = Math.floor(Math.random() * imgarr.length);
+				document.getElementById("img2").firstChild.src = "../img/" + imgarr[idx];
+				document.getElementById("img2").firstChild.width = 200;
+				document.getElementById("img2").firstChild.height = 200;
+			}
+			
+			function stop(){
+				clearInterval(id);	
+			}
+			
+			var count = 0;
+			function swChange(){
+				//buttonarr = ["sw_off.png", "sw_on.png"];
+				//idx = Math.floor(Math.random() * buttonarr.length);
+				//document.getElementById("img3").firstChild.src = "../img/sw_off.png";
+				imgarr = ["sw_off.png", "sw_on.png"];
+				//idx = Math.floor(Math.random() * imgarr.length);
+				if ( count == 0){
+					document.getElementById("img3").firstChild.src = "../img/" + imgarr[1];
+				} else if (count % 2 == 0){
+					document.getElementById("img3").firstChild.src = "../img/" + imgarr[0];
+				} else if (count % 2 == 1){
+					document.getElementById("img3").firstChild.src = "../img/" + imgarr[1];
+				}
+					//document.getElementById("img3").firstChild.width = 200;
+					//document.getElementById("img3").firstChild.height = 200;
+					count++;
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1>DOM</h1>
+		<pre>HTML 문서를 객체로 표현한 것을 DOM이라 한다.</pre>
+		<div class="box">
+			<h2>1. 새로운 HTML 요소 생성(이미지 요소)</h2>
+			버튼을 클릭하면 이미지를 표시한다.<br><br>
+			1. 각 list의 문자를 가져온다. firstChild.data; <br>
+			2. 이미지 객체를 생성한다 - createElement('img');<br>
+			3. 각 list의 자식으로 이미지를 추가한다 - appendChild()<br>
+			<br>
+			<button onclick="proc1()">실행</button>
+			<ul>
+				<li>컴퓨터</li>
+				<li>식품</li>
+				<li>호랑이</li>
+				<li>구름</li>
+				<li>커피</li>
+			</ul>
+		</div>
+		
+		<div>
+			<h2>2. 새로운 HTML 요소 생성(이미지 요소)</h2>
+			각 리스트를 클릭하면 해당 이미지를 표시한다. <br>
+			1.메소드 호출시 매개변수로 this를 넘겨준다. <br>
+			2. createElement() : 이미지 요소를 생성한다. <br>
+			3. appendChild(): this 요소 안에 자식으로 넣어라 <br>
+			<br><br>
+			<ul>
+				<li onclick="proc2(this);">컴퓨터</li>
+				<li onclick="proc2(this);">식품</li>
+				<li onclick="proc2(this);">호랑이</li>
+				<li onclick="proc2(this);">구름</li>
+				<li onclick="proc2(this);">커피</li>
+			</ul>
+		</div>
+		
+		<div>
+			<h2>3. src속성 변경</h2>
+			버튼을 클릭할 때 마다 이미지를 변경<br><br>
+			1. 이미지를 배열로 구성<br>
+			2. 랜덤발생<br>
+			3. 이미지 배열 중 랜덤발생 수 번째의 이미지로 src를 변경한다.<br>
+			
+			<button onclick="srcChange();"> 변경 </button>
+			<br><br>
+			- 버튼을 클릭하면 1초간격으로 이미지를 변경<br>
+			- setInterval(function(){}, 1000); <br><br>
+			
+			<div id="img1"><img src="../img/호랑이.png"></div>
+		</div>
+		
+		<br><br>
+		<div>
+			<h2>4. 알아서 1초마다 변경하기</h2>
+			
+			<button onclick="srcChange2();"> 변경 </button>
+			<button onclick="stop();"> 중지 </button>
+			<br><br>
+			- 자동으로 1초간격으로 이미지를 변경<br>
+			- setInterval(function(){}, 1000); <br><br>
+			<div id="img2"><img src="../img/호랑이.png"></div>
+		</div>
+		
+		<div>
+			<h2>5. 클릭으로 on/off</h2>
+			<br>
+			- 버튼 누르면 이미지를 변경<br><br>
+			
+			<div id="img3"><img src="../img/sw_off.png" onclick="swChange();"></div>
+		</div>
+	</body>
+</html>

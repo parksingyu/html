@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 객체</title>
+		<script>
+		/*
+			var arr = new Array();
+			arr[0] = "유지상";
+			arr[1] = "박신규";
+			arr[2] = "진주호";
+			
+			var arr2 = new Array();
+			arr2[0] = "지원희";
+			arr2[1] = "한승희";
+			arr2[2] = "안정현";
+			arr2[3] = "이이슬";
+			*/
+			
+			/* concat : 두 배열을 합친다*/
+			/*
+			document.write(arr2.concat(arr)+"<br>");
+			
+			document.write(arr+"<br>");
+			arr.push("이정은");
+			
+			document.write(arr+"<br>");
+			
+			arr.pop();
+			document.write(arr.join("&"));
+			document.write("<br>");
+			
+			var myArr = [10, 20, 1, 3, 5, 0, 77, 11];
+			
+			document.write(myArr.sort());
+			document.write("<br>")
+			document.write(myArr.sort(function(a,b){return a-b;}));
+			*/
+			/*	
+				문제1)
+				사람 이름을 계속 prompt로 입력 받아 배열에 저장하고
+				그 저장된 이름을 출력하는 프로그램을 작성하세요.
+				출력형태는 사람이름*사람이름*사람이름
+				공백을 입력하거나 0을 입력했을때 종료.
+				*/
+				/*
+				var i = 0;
+				var arr = new Array();
+				while(true){
+				arr[i] = prompt("이름을 입력해주세요.")
+				
+				if ( arr[i] == 0 || arr[i] == "" ){
+					
+					alert("종료합니다");
+					break;
+				}
+				i++
+			}
+				arr.pop();
+				document.write(arr.join("*"));
+				*/
+				
+				/*	
+				문제2)
+				prompt로 중복되지 않은 정수 5개를 입력받으세요.
+				만약, 중복되는 수를 입력했을때는 다시 입력받으세요.
+				그 배열을 출력해주세요.
+			*/
+			/*	
+			var arr = new Array();
+			for(var i =0; i<5; i++){
+		 		arr[i] = prompt("숫자를 입력하세요");
+		 		
+		 		for (var j = 0; j<i; j++){
+		 			if ( arr[j] == arr[i]){
+		 				alert("중복되는 숫자입니다.");
+			 			i--;	
+		 			}
+		 		}
+			}
+			document.write(arr);
+			*/
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>
+
+

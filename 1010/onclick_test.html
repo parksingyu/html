@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+		var now = new Date();
+		var abc = now.getFullYear();
+		var abcd = (now.getMonth()+1);
+		var co = 11;
+		
+		startday = startday.getDay();
+		function proc3(){
+				var rect = {
+				getArea : function(){
+					abcd++;  //co++; 
+					return abcd; //return co;
+				}
+			} 
+			a = rect.getArea();
+			document.getElementById('result3').innerHTML = a;
+		}
+		
+		
+		</script>
+	</head>
+	<body>
+		<button type="button" onclick="proc3()">실행</button>
+		<div class="result" id="result3"></div>
+	</body>
+</html>

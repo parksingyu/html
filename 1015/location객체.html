@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			var res = "";
+			
+			res += "protocol : " + location.protocol + "<br>";
+			res += "host : " + location.host + "<br>";
+			res += "hostName : " + location.hostname + "<br>";
+			res += "port : " + location.port + "<br>";
+			res += "pathname : " + location.pathname + "<br>";
+			res += "href : " + location.href + "<br>";
+			
+			window.onload = function(){
+				document.getElementById("result").innerHTML = res;
+			}
+		</script>
+	</head>
+	<body>
+		<div id="result"> </div>
+	</body>
+</html>

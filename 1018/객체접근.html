@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>객체접근</title>
+	</head>
+	<body>
+		<img src="../img/호랑이.png" id="img1" name="myImg">
+		
+		<!-- <form name="myform"> 네임을 써서 많이 쓴다.-->
+		<form>
+			<input type="text" name="txt1">
+			<input type="text" name="txt2">
+			<button onclick="func1();">놀러서 값가져오세요!</button>
+		</form>
+		
+		<script>
+			//alert(decodeURI(document.getElementById("img1").src));
+			//alert(decodeURI(document.myImg.src));
+			
+			function func1(){
+				/* alert(document.myform.txt1.value);
+				alert(document.myform.txt2.value); */
+				alert(document.forms[0].elements[0].value);
+				alert(document.forms[0].elements[1].value);
+			}
+			
+			alert(document.images[0].src);
+		</script>
+	</body>
+</html>

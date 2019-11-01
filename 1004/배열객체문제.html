@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열객체 문제</title>
+		<script>
+			/*prompt로 사람이름 5명을 받아서 배열에 넣고
+			prompt로 숫자를 2개(0~4)를 받아서 그 범위안의 배열을 출력하세요.
+			
+			함수 사용
+			function solution(){
+				
+				return 출력부분;
+			}
+			
+			document.write(solution());
+			*/
+			/*
+			var str = new Array();
+			str = ["오동규", "박재욱", "오제민", "전보영", "진주호"];
+			
+			function solution(){
+				var a = prompt("첫번째 숫자 입력");
+				var b = prompt("두번째 숫자 입력");
+				str = str.slice(a,b);
+				return str;
+			}
+			
+			document.write(solution());
+			*/
+			/*
+			문제2) prompt로 이름 받을때, 자신의 이름을 넣고
+			자신의 이름이 들어간 index번호를 출력하세요
+			*/
+			
+			var str = new Array();
+			str = ["오동규", "박재욱", "오제민", "전보영", "진주호"];
+			
+			function solution(){
+				var a = prompt("입력하세요");
+				return str.indexOf(a);
+				
+				/*
+				b = str.indexOf(a);
+				return b;
+				*/
+				
+			}
+			document.write(solution());
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

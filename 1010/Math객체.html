@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Math 객체</title>
+		<style>
+		div{
+			height : 80px;
+			width : 80px;
+			line-height : 80px;
+			font-size : 30px;
+			float : left;
+			text-align : center;
+			border-radius : 50%;
+			margin : 0px 0px 10px 10px;
+			display: block;
+		}
+			
+		#lotto_0_0{background-color : orange;}
+		#lotto_0_1{background-color : orange;}
+		#lotto_0_2{background-color : orange;}
+		#lotto_0_3{background-color : orange;}
+		#lotto_0_4{background-color : orange;}
+		#lotto_0_5{background-color : orange;}
+		
+		#lotto_1_0{background-color : powderblue;clear : both;}
+		#lotto_1_1{background-color : powderblue;}
+		#lotto_1_2{background-color : powderblue;}
+		#lotto_1_3{background-color : powderblue;}
+		#lotto_1_4{background-color : powderblue;}
+		#lotto_1_5{background-color : powderblue;}
+		
+		#lotto_2_0{background-color : lightgreen;clear : both;}
+		#lotto_2_1{background-color : lightgreen;}
+		#lotto_2_2{background-color : lightgreen;}
+		#lotto_2_3{background-color : lightgreen;}
+		#lotto_2_4{background-color : lightgreen;}
+		#lotto_2_5{background-color : lightgreen;}
+		
+		#lotto_3_0{background-color : pink;clear : both;}
+		#lotto_3_1{background-color : pink;}
+		#lotto_3_2{background-color : pink;}
+		#lotto_3_3{background-color : pink;}
+		#lotto_3_4{background-color : pink;}
+		#lotto_3_5{background-color : pink;}
+		
+		#lotto_4_0{background-color : yellow;clear : both;}
+		#lotto_4_1{background-color : yellow;}
+		#lotto_4_2{background-color : yellow;}
+		#lotto_4_3{background-color : yellow;}
+		#lotto_4_4{background-color : yellow;}
+		#lotto_4_5{background-color : yellow;}
+		
+		</style>
+		<script>
+			/*
+			Math.random()*10 : 0~9
+			Math.random()*10+1 : 1~10
+			Math.random()*20+11 : 11~30
+			
+			Math.floor() : 소수점 버림, 정수 반환
+			Math.ceil() : 소수점 올림, 정수 반환
+			Math.round() : 소수점 반올림, 정수반환
+			*/
+			
+			//var random = Math.floor(Math.random()*10+1);
+			//document.write(random);
+			
+			/*
+			문제1) 1~10까지의 랜덤수를 발생후 프롬프트를 사용하여 
+			사용자가 맞추는 프로그램을 작성하세요
+			
+			alert("틀렸습니다.");
+			prompt 다시 띄워주기
+			
+			alert("xx번만에 맞추셨습니다. ");
+			prompt는 띄우지 않기
+			*/
+			
+			/*1번문제 시작
+			var count = 0;
+			while(true){
+				var random1 = Math.floor(Math.random()*10+1);
+				var an = prompt("숫자를 입력하세요 ( 1~10)");
+				if (random1 != an){
+					alert("틀렸습니다");
+					document.write("첫번째 랜덤 값 : " + random1 + "<br>");
+					count++;
+				} else if ( random1 == an){
+					alert(count+"번 만에맞췄습니다.");
+					document.write(count+"번 만에맞췄습니다.");
+					break;
+				}
+			}
+			1번문제 종료*/
+			
+			/*
+			문제2) 가위 바위 보 게임을 할 수 있는 프로그램을 작성하세요.
+			(컴퓨터는 랜덤, 사용자는 prompt로 입력받아서)
+			출력은 
+			컴퓨터가 가위로 이겼습니다.
+			or
+			사용자가 바위로 이겼습니다.
+			or 
+			비겼습니다. 등..
+			*/
+			//1은 가위, 2는 바위, 3은 보로 할게요
+			
+			/* 2번정답 시작
+			var random = Math.floor(Math.random()*3+1);
+			var me = prompt("1은 가위, 2는 바위, 3은 보입니다 무엇을 내시겠어요?");
+			var com, na;
+			if (random == 1){
+				com = "가위";
+			} else if (random == 2){
+				com = "바위";
+			} else if (random == 3){
+				com = "보";
+			}
+			
+			if (me == 1){
+				na = "가위";
+			} else if (me == 2){
+				na = "바위";
+			} else if (me == 3){
+				na = "보";
+			}
+			if ( random == me ){
+				document.write("컴퓨터 : " + com + " / 사용자 : " + na+"<br>");
+				document.write("비겼습니다");
+			} else if(random == 1 && me == 2) {
+				document.write("컴퓨터 : " + com + " / 사용자 : " + na+"<br>");
+				document.write("사용자가 바위로 이겼습니다");
+			} else if(random == 1 && me == 3) {
+				document.write("컴퓨터 : " + com + " / 사용자 : " + na+"<br>");
+				document.write("컴퓨터가 가위로 이겼습니다");
+			} else if(random == 2 && me == 1) {
+				document.write("컴퓨터 : " + com + " / 사용자 : " + na+"<br>");
+				document.write("컴퓨터가 바위로 이겼습니다");
+			} else if(random == 2 && me == 3) {
+				document.write("컴퓨터 : " + com + " / 사용자 : " + na+"<br>");
+				document.write("사용자가 보로 이겼습니다");
+			} else if(random == 3 && me == 1) {
+				document.write("컴퓨터 : " + com + " / 사용자 : " + na+"<br>");
+				document.write("사용자가 가위로 이겼습니다");
+			} else if(random == 3 && me == 2) {
+				document.write("컴퓨터 : " + com + " / 사용자 : " + na+"<br>");
+				document.write("컴퓨터가 바위로 이겼습니다");
+			}
+			2번정답 종료*/
+			
+			/*문제3) 로또 번호 생성하는 프로그램을 작성하세요.
+			(1번 ~ 45번 중 9개의 번호를 추첨) * 5번
+			3 6 7 29 4 19
+			6 1 17 39 14 29
+			13 6 3 9 44 4
+			13 7 2 29 4 35
+			3 4 5 15 18 26
+			*/
+			//document.write("<div id = "lotto_main">"+"lotto"+"</div>");
+				/*빙고시작
+				var arr = new Array();
+				for (var k = 0; k<5; k++){       //5개 찍어주는거 
+					for(var i=0; i<6; i++){      //6개의 랜덤함수
+						var random = Math.floor(Math.random()*45+1);
+						arr[i] = random;
+						
+						for (var j=0; j<i; j++){  //겹치지 않게 하는거
+							if (arr[j] == arr[i]){
+								i--;
+							}
+						}
+					}
+					 for( var i = 0; i<6; i++){
+						arr = arr.sort(function(a,b){return a-b;}); //정렬 하는놈 안해도 됨.
+						 document.write("<div id = "+"lotto_"+k+"_"+i+">" + arr[i] + "</div>");
+					}
+				}
+				빙고 종료*/
+				
+				
+				/*문제 4-1)
+					주민번호를 입력받아서 생년월일과 성별을 출력하는 프로그램을 작성하세요.
+					(입력은 prompt로 받는다)
+					
+					예시) 주민번호를 110326-4432618로 입력받은경우
+					(1, 2는 1900년대생  3,4는 2000년대생)
+					출력 예시)
+					생일 : 2011년 3월 26일
+					성별 : 여자
+				*/
+				/*
+				var strhtml = "";
+				var ju = prompt("주민번호를 입력해주세요");
+				strhtml = ju;
+				document.write(strhtml);
+				document.write("<br>");
+				document.write("생일 : ");
+				if ( strhtml[7] == 1 | strhtml[7] == 2){
+					document.write(19);	
+				} else if ( strhtml[7] == 3 | strhtml[7] == 4 ) {
+					document.write(20);
+				}
+				document.write(strhtml[0]+strhtml[1]+"년"+ strhtml[2]+strhtml[3]+"월"+strhtml[4]+strhtml[5]+"일");
+				document.write("<br>");
+				if ( strhtml[7] == 1 | strhtml[7] == 3){
+					document.write("성별 : 남자")	
+				} else if ( strhtml[7] == 2 | strhtml[7] == 4 ) {
+					document.write("성별 : 여자")
+				}
+				*/
+				
+				/* 문제 4-2)
+				   주민번호를 입력받아 주민번호의 유효성을 검사하는 프로그램을 작성하세요
+				   (입력은 prompt로 받는다)
+				   -> 반드시 함수를 사용하기 (return 구문 사용)
+				   주민번호 : ABCDEF-GHIJKLM(return 구문 사용하기)
+				   1. A*2+B*3+C*4.......+H*9 + I*2+....+L*5
+				   2. 1번의 합을 11로 나눈 나머지를 구한다.
+				   3. 11에서 2번의 결과를 뺀다.
+				   4. 3번의 결과가 0~9라면 값 그대로, 10이면 0, 11이면 1로 반환
+				   5. 4번의 결과와 M자리의 값이 같으면 맞는번호이다.
+				*/
+				
+				function table1(){
+					   var strhtml = prompt("주민번호를 입력해주세요");
+					   var a = 2;
+					   var b = 0;
+					   var c = 11;
+					   var sum = 0;
+					   
+					   for (var i = 0; i<strhtml.length-1; i++){  // strhtml.length : 14
+						   if (strhtml[i] == "-"){
+						   } else {
+							   if ( i <= 6 ){
+								   sum = sum + strhtml[i] * (i+2);
+							   } else if ( i == 7 || i == 8){
+								   sum = sum + strhtml[i] * (i+1);
+							   } else {
+								   sum = sum + strhtml[i] * a;
+								   a++;
+							   }
+						   }
+					   }
+					   
+					   b = sum % 11;
+					   c = c - b;
+					   var result;
+					   if ( 0<=c && c<=9 ){
+ 						   if ( c == strhtml[13]){
+							   result="맞는 주민번호 입니다.";
+						   } else {
+							   result="틀린 주민번호 입니다.";
+						   } 
+					   } else if ( c == 10 ){
+						   c = 0;
+ 						   if ( c == strhtml[13] ){
+							   result = "맞는 주민번호 입니다.";
+						   } else {
+							   result = "틀린 주민번호 입니다.";
+						   } 
+					   } else if ( c == 11 ){
+						   c = 1;
+ 						   if ( c == strhtml[13] ){
+							   result = "맞는 주민번호 입니다.";
+						   } else {
+							   result = "틀린 주민번호 입니다.";
+						   }
+					   } 
+					   //strhtml += "<br>"+sum*1;
+					   //strhtml += "<br>"+b;
+					   //strhtml += "<br>"+c;
+					   //document.getElementById("jumin").innerHTML += strhtml;
+					   return result;
+				   }
+				
+			
+	window.onload = function() {
+		document.write(table1());
+		//table1();
+	}
+		</script>
+	</head>
+	<body>
+		<div id="jumin"> </div>
+	</body>
+</html>

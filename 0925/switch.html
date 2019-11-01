@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>스위치</title>
+	</head>
+	<script>
+		/*
+		var grade = prompt("성적을 입력하세요!", "A-F 사이의 문자로(E학점 빼고)");
+		
+		switch(grade){
+		case "A" : alert("참 잘했어요!");
+					break;
+		case "B" : alert("잘했어요!");
+					break;
+		case "C" : alert("수고했어요!");
+					break;
+		case "D" : alert("노력이 필요해요!");
+					break;
+		case "F" : alert("재수강!");
+					break;
+		default : alert("알수 없음!");
+		}*/
+		
+		var input1 = prompt("가위바위보를 입력하세요.", "첫번째 사람");
+		var input2 = prompt("가위바위보를 입력하세요.", "두번째 사람");
+		
+		switch(input1){
+		case "가위" :
+			if(input2 == "가위"){
+				alert("비겼습니다.");
+			} else if( input2 == "바위"){
+				alert("두번째 사람이 승리 했습니다."); 
+			} else if( input2 == "보"){
+			    alert("첫번째 사람이 승리 했습니다."); 
+			}
+			break;
+		case "바위" :
+			if(input2 == "가위"){
+				alert("첫번째 사람이 승리했습니다");
+			} else if( input2 == "바위"){
+				alert("비겼습니다.");
+			} else if( input2 == "보"){
+				alert("두번째 사람이 승리 했습니다."); 
+			}
+			break;
+		case "보" : 
+			if(input2 == "가위"){
+				alert("두번째 사람이 승리 했습니다."); 
+			} else if( input2 == "바위"){
+				alert("첫번째 사람이 승리했습니다"); 
+			} else if( input2 == "보"){
+				alert("비겼습니다."); 
+			}
+			break;
+		default : 
+			alert("알수 없음!");
+			break;
+		}
+		
+		//조건문 넣어주세요.
+		
+		//결과값 : 
+		//첫번째 사람이 승리하였습니다.
+		//두번째 사람이 승리하였습니다.
+		//비겼습니다.
+	</script>
+	
+	<body>
+		
+	</body>
+</html>

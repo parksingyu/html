@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열 및 함수 문제</title>
+		<script>
+			/*
+			문제1) 두 정수 a, b가 주어졌을 때
+			a와 b사이에 속한 모든 정수의 합을 리턴하는 함수(solution)를 작성하세요.
+			예를들어, a=3, b=7 이면 3+4+5+6+7의 합을 리턴하여 출력하세요.
+			두 수가 같을 경우에는 0을 리턴해주세요.
+			a가 b의 수보다 더 클경우도 a=7, b=3, 7+6+5+4+2의 합계
+			*/
+			
+			/*
+			function solution(a, b){
+				var sum = 0;
+				
+				if ( a < b ){
+					for (var i = a; i<=b; i++){
+						sum += i;
+					}	
+				} else if ( a > b){
+					for (var i = b; i<=a; i++){
+						sum += i;
+					}
+				}
+				
+				if ( a == b ){
+					return 0;
+				}
+				return sum;
+			}
+			
+			var sum = solution(10,10);
+			document.write(sum);
+			*/
+			
+			/*
+			문제2) 길이가 n이고, "수박수박수박수박...."와 같은 패턴을 유지하는 문자열을 리턴하는 함수
+			solution을 완성하세요. 예를 들어, n의 값이 4면 수박수박 3이면 수박수를 리턴하세요.
+			funtion solution(n){
+				return 문자열;
+			}
+			solution(3);
+			*/
+			
+			/*
+			function solution(n){
+				var arr = new Array();
+				for(var i = 0; i<n; i++){
+					if ( i % 2 == 1){
+						arr[i] = "박";
+					} else if ( i % 2 == 0){
+						arr[i] = "수";
+					}
+				}
+				return arr;
+			}
+			arr = solution(6);
+			document.write(arr.join(""));
+			*/
+			
+			/*
+			문제3) 배열 arr이 주어집니다.
+			배열 arr의 각 원소는 숫자 0부터 9까지로 이뤄져 있습니다.
+			이때, 배열 arr에서 연속적으로 나타나는 숫자는 하나만 남기고 전부 제거하려합니다.
+			제거 후 남은 arr의 원소들을 반환하세요.
+			예를 들어, arr = [1,1,2,3,3,7,7] 이면 arr=[1,2,3,7]을 반환하세요.
+
+			STEP2)오름차순 배열로 변경
+			arr = [7,7,5,5,9,9,1] -> arr[7,5,9,1] -> arr=[1,5,7,9]
+			
+			function solution(arr){
+				return arr;
+			}
+			
+			var arr = [1,1,2,3,3,7,7];
+			arr = solution(arr);
+			document.write(arr);
+			*/
+			
+			/*
+			function solution(arr){
+				var cp = new Array();
+				for ( var i = 0; i<arr.length; i++){
+					if ( arr[i] != arr[i+1]){
+						cp.push(arr[i]);
+					}
+				}
+				arr = cp;  
+				return arr;
+			}
+			var arr = [1,1,1,2,3,3,4,4,7,7,8,8,9,9];  //step1
+			//var arr = [7,7,15,15,9,9,1];  //step2 
+			arr = solution(arr);
+			//document.write(arr); // step1
+			document.write(arr.sort(function(a,b){return a-b;})); //step2
+			*/
+			/* int i = store.indexOf("치킨");
+			str = str.replace("3", "짝"); */
+			
+			
+			/*
+			노래가사에서 반복되는 단어를 찾아 몇번 반복되는지 찾고
+			2번이상 반복되는 단어와 횟수를 출력하세요.
+			*/
+			
+			/* var str = new Array("Apple", "Banana", "Kiwi", "Pear", "Peach");
+			var result = str.slice(0, 3);
+			document.write(result); */
+			
+			
+/* 			var arr = new Array(); 
+			var str = "Ring Ding Dong Ring Ding Dong";
+			
+			document.write(str+"<br>"); 
+			var result;
+			result = str.slice(0, str.indexOf(" "));  //result 변수에 처음부터 띄어쓰기 전까지의 값을 가져온다.
+			arr.push(result); // result 값을 arr에 넣어준다.
+			str = str.replace(str.slice(0, str.indexOf(" ")), ""); // 처음부터 띄어쓰기 전까지 값을 삭제
+			document.write(str+"<br>");
+			
+			
+			var result1 = str.slice(0, str.indexOf(" "));
+			arr.push(result1); // result 값을 arr에 넣어준다.
+			str = str.replace(str.slice(0, str.indexOf(" ")), ""); // 처음부터 띄어쓰기 전까지 값을 삭제
+			document.write(str+"<br>");
+			
+			document.write("arr = " + arr + "<br>");
+			document.write("result = "+ result);  */
+			
+			// 한개씩 배열에 넣을때
+			var str = "abcdefg";
+			var arr = new Array();
+			for(var i=0; i<str.length; i++){
+				arr[i] = str.charAt(i);
+			}
+			document.write(arr);
+			
+			
+			
+		</script>
+	</head>
+	
+	<body>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM객체</title>
+	</head>
+	
+	<body>
+		 <div id="target">
+			 <div id="img1"><img src="../img/호랑이.png" onclick="removeNode(1)" width=300;></div>
+			 <div id="img2"><img src="../img/컴퓨터.png" onclick="removeNode(2)" width=300;></div>
+			 <div id="img3"><img src="../img/커피.png" onclick="removeNode(3)" width=300;></div>
+			 <div id="img4"><img src="../img/식품.png" onclick="removeNode(4)" width=300;></div>
+			 <div id="img5"><img src="../img/구름.png" onclick="removeNode(5)" width=300;></div>
+		</div>
+		<script>
+		function removeNode(point){
+			var parent = document.getElementById("target");
+			var child =  document.getElementById("img"+point);
+			parent.removeChild(child);
+		}
+		</script>
+	</body>
+</html>
+
+
+
+
+

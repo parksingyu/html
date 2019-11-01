@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바 스크립트 객체</title>
+		<script>
+			var myCar = {
+				model : "520d",
+				speed : 60,
+				color : "red",
+				brake : function(){this.speed -= 10;},// 위에 있는 스피드 60을 가져와서 쓰겠단 뜻. this를 안쓰면 speed를 새로 만들겟다는 뜻  
+				accel : function(){this.speed += 10;}
+			}
+			myCar.color = "yellow";
+			myCar.brake();  //소괄호는 함수라는걸 알려주는거다. 함수일땐 반드시 소괄호 써야 한다.
+			document.write(myCar.speed+"<br>");
+			myCar.brake();
+			document.write(myCar.speed+"<br>");
+			myCar.brake();  // 한개를 넣을때마다 10씩 속도가 감소한다.
+			document.write(myCar.speed+"<br>");
+			myCar.accel();
+			document.write(myCar.model+"<br>");
+			
+			document.write(myCar.color+"<br>");
+			document.write(myCar.speed+"<br>");
+			
+			/*
+			function myCar(model, speed, color){
+				//this.model = "model"; //이렇게 위에 있는걸 그대로 가져올수도 있음
+				this.model = "5"; 
+				this.speed = 120;
+				this.color = "red";
+			}
+			
+			var car = new myCar("520a", 40, "black");
+			
+			document.write(car.model+"<br>");
+			document.write(car.speed+"<br>");
+			document.write(car.color+"<br>");
+			*/
+		</script>
+	</head>
+	
+	<body>
+	
+	</body>
+</html>

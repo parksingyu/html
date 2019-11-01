@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UserInfoService</title>
+<script type="text/javascript">
+	window.onload  = function() {
+		// 페이지 완전 로딩후 실행
+		alert("window.onload 로드");
+		
+		function windowOnload(){
+			alert('window.onload');
+		}
+		
+		document.getElementById("input").onclick = function(){
+			alert("javascriptEvent");
+		}
+	}
+    
+    function testOut(){
+    	alert('testOut');
+    }
+	
+	alert("스크립트 로드 완료");
+</script>
+</head>
+<body>
+<div id="pageDiv" style="width:1100px; height:1000px;">
+	<input type="button" value="testOut" onclick="testOut()"/>
+	<input type="button" value="windowOnload" onclick="htmlEvent()"/>
+	<input id="input" type="button" value="javascriptEvent" />
+</div>
+</body>
+</html>

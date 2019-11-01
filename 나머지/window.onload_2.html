@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>onload2</title>
+		<script>
+		
+		function fun1(){
+			
+		}
+		
+		window.onload  = function() {
+			// 페이지 완전 로딩후 실행
+			alert("window.onload 로드");
+			
+			function windowOnload(){
+				alert('window.onload');
+			}
+			
+			document.getElementById("input").onclick = function(){
+				alert("javascriptEvent");
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<div id="jm"> </div>
+	</body>
+</html>

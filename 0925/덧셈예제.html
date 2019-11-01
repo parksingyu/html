@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>덧셈예제</title>
+		
+		<script>
+			function calc(n){
+				var x = document.getElementById("x").value;
+				var y = document.getElementById("y").value;
+
+				var sum, minus, multiple, divide;
+				
+				
+				if ( n == 1){
+					sum = (x*1)+(y*1);
+					document.getElementById("sum").value = sum;
+				} else if ( n == 2){
+					minus = (x*1) - (y*1);
+					document.getElementById("minus").value = minus;
+				} else if ( n == 3){
+					multiple = (x*1) * (y*1);
+					document.getElementById("multiple").value = multiple;
+				} else if (n == 4){
+					divide = parseInt (x / y);
+					document.getElementById("divide").value = divide;
+				}
+			}
+			
+			/*function calm(){
+				var x = document.getElementById("x").value;
+				var y = document.getElementById("y").value;
+				
+				var minus;
+				minus = (x*1) - (y*1);
+				document.getElementById("minus").value = minus;
+			}
+			*/
+			
+			/*
+			function calct(){
+				var x = document.getElementById("x").value;
+				var y = document.getElementById("y").value;
+				
+				var sum;
+				var minus;
+				
+				sum = (x*1)+(y*1);
+				minus = (x*1) - (y*1);
+				document.getElementById("sum").value = sum;
+				document.getElementById("minus").value = minus;
+			}
+			
+			*/
+			
+		</script>
+	</head>
+	
+	<body>
+		<form>
+			x: <input type = "text" id="x"><br>
+			y: <input type = "text" id="y"><br>
+			<input type = "button" value = "덧셈" onclick="calc(1);">
+			 계산: <input type = "text" id="sum"><br>
+			
+			<input type = "button" value = "뺄셈" onclick="calc(2);">
+			 계산: <input type = "text" id="minus"><br>
+	
+			<input type = "button" value = "곱셈" onclick="calc(3);">
+			 계산: <input type = "text" id="multiple"><br>
+			
+			<input type = "button" value = "나눗셈" onclick="calc(4);">
+			계산: <input type = "text" id="divide"><br>
+				
+		</form>			
+	</body>
+</html>

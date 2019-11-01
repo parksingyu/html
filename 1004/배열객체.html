@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열객체</title>
+		<script>
+			var str = new Array();
+			str = ["이정은", "이선욱", "조건희", "최효은"];
+			str2 = ["김영호", "박희제", "현솔비"];
+			
+			function index(){
+				var vname = prompt("이름넣어주세요");
+				
+				return str.indexOf(vname);
+				//document.write(str.indexOf(vname));
+			}
+			
+			//index();
+			
+			function lastIdx(){
+				var vname = prompt("이름 넣어주세요");
+				return str.lastIndexOf(vname, 3);
+			}
+			
+			//var idx = lastIdx();
+			//document.write(idx);
+			
+			function pushArr(){
+				//str.push("김혜정");
+				str.unshift("이정은");
+				return str;
+			}
+			//document.write(pushArr() + "<br>");
+			
+			function reverseArr(){
+				str.reverse();
+				return str;
+			}
+			//document.write(reverseArr() + "<br>");
+			
+			function  sortArr(){
+				
+				str.sort();  //숫자 값이면 소괄호 안에 펑션 넣기
+				return str;
+			}
+			//document.write(sortArr() + "<br>");
+			
+			function joinArr(){
+				str = str.join(" x ");
+				return str;
+			}
+			//document.write(joinArr() + "<br>");
+			
+			function concatArr(){
+				str.concat(str2);
+				str2.pop();
+				
+				return str2; //존나 헷갈린다 이거
+			}
+			//document.write(concatArr()+"<br>");
+			
+			function sliceArr(){
+				str = str.slice(1,2);
+				return str;
+			}
+			
+			document.write(sliceArr());
+			
+		</script>
+	</head>
+	
+	<body>
+		<h1> indexOf </h1>
+		<p> 앞에서 부터 찾는다(배열의 순서) </p>
+		<h1> lastIndexOf</h1>
+		<p> 뒤에서부터 찾는다(배열의 순서) </p>
+		
+		<h1> push </h1>
+		<p> 배열의 맨 뒤에 넣는다 </p>
+		<h1> pop </h1>
+		<p> 배열의 맨 뒤에 요소를 뺀다 </p>
+		
+		<h1> sort </h1>
+		<p> 기본sort는 오름차순
+		만약, 숫자 오름차순을 원할 경우는 함수를 반드시 사용한다
+		function(a,b){return a-b;};
+		</p>
+		<h1>concat</h1>
+		<p>두개의 배열을 결합해서 한개의 배열로 생성
+		   배열1 + 배열2 = 새로운 배열
+		</p>
+		<h1>join</h1>
+		<p>배열+문자열로 변환
+		기본은 ,로 생성되지만 원하는 문자열로 구분자를 생성
+		</p>
+		
+		<h1>slice</h1>
+		<p>배열의 index로 요소를 자름((1,3)의 경우 3미만 까지만 적용)</p>
+	</body>
+</html>

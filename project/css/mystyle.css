@@ -1,0 +1,404 @@
+@CHARSET "UTF-8";
+
+			body {
+            	margin:0;
+            	padding:0;
+            }
+            
+            #title{
+            	width: 100%;
+            	height : 60px;
+            }
+            
+         	#inner_title{
+         		max-width:1240px;
+         		height : 60px;
+         		margin : auto;
+         	}
+         	
+         	#title_1{
+         		display : block;
+         		line-height: 70px;
+         		width : 10%;
+         		height : 60px;
+         		float : left;
+         	}
+         	
+         	#title_2{
+         		line-height: 90px;
+         		width : 10%;
+         		height : 60px;
+         		float : left;
+         	}
+         	
+         	#rtitle{
+         		color : gray;
+         	}
+         	
+         	#title_3{
+         		line-height: 50px;
+         		margin : 0px 15px;
+         		height : 60px;
+         		float : right;
+         		font-size : 13px;
+         	}
+         	
+         	#title_4{
+         		line-height: 50px;
+         		margin : 0px 15px;
+         		height : 60px;
+         		float : right;
+         		font-size : 13px;
+         	}
+         	
+         	#title_5{
+         		line-height: 50px;
+         		margin : 0px 20px 0x 25px;
+         		height : 60px;
+         		float : right;
+         		margin : auto;
+         		font-size : 13px;
+         	}
+         	
+     	    #title_6{
+         		clear : both;
+         	}
+         	
+         	#title_3:hover{
+				color : blue;  /* 커서 갖다 놓았을때 변하는 색 */
+				text-decoration : underline;
+			}
+         	
+         	#title_4:hover{
+				color : blue;  /* 커서 갖다 놓았을때 변하는 색 */
+				text-decoration : underline;
+			}
+         	
+         	#title_5:hover{
+				color : blue;  /* 커서 갖다 놓았을때 변하는 색 */
+				text-decoration : underline;
+			}
+			
+			#title2{
+            	width: 100%;
+            	height : 50px;
+        		
+            }
+            
+           	#inner_title2{
+         		width : 1240px;
+         		height : 50px;
+         		margin : auto;
+         	}
+            
+           	#title_2_1{
+         		line-height: 60px;
+         		width : 10%;
+         		height : 50px;
+         		
+         		float : left;
+         	}
+         	
+         	#nav ul{
+				list-style:none;
+			}
+			
+			#title_2_2 ul li{
+				
+				margin : 3px 15px;
+				line-height : 80px; /*home, aboutUT NEWS 등등을 상하 가운데로 오게 합니다.*/
+			}
+			
+            #title_2_2 a{
+            	line-height: 40px;
+				color : black;
+				text-decoration : none;
+				font-size : 14px;
+				float : left;
+				margin : 0px 15px 0px 10px;
+			}
+			
+			#inner_rolling a:hover{
+				color : black;
+			}
+			
+         	#rolling_4_title :hover{
+				color : blue;  /* 커서 갖다 놓았을때 변하는 색 */
+				text-decoration : underline;
+			}
+			
+			#title_2_3{
+				line-height: 70px;
+         		width : 10%;
+         		height : 50px;
+         		float : left;
+			}
+			
+			#title_2_4{
+				line-height: 70px;
+         		width : 10%;
+         		height : 50px;
+         		float : right;
+         		margin : 0px 50px;
+			}
+			
+			
+			#rolling_1{
+				width:100%;
+				height:450px;
+				background-position: center;
+				background-image: url(../img/slide02.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			#inner_rolling{
+         		max-width: 1240px;
+         		height : 450px;
+         		margin : auto;
+         	}
+         	
+         	#rolling_1_title{
+         		color : white;
+         	}
+         	
+         	#rolling_2_title{
+         		color : white;
+         	}
+         	
+         	#rolling_3_title{
+         		color : white;
+         	}
+         	
+         	#rolling_4_title{
+         		margin : 50px 40px 50px 0px;
+         		color : black;
+         		border-radius : 50px;
+         		width : 150px;
+         		height : 50px;
+         		background-color : red;
+         	}
+         	
+         	#inner_rolling{
+         		max-width: 1240px;
+         		height : 450px;
+         		margin : auto;
+         	}
+         	
+         	#rolling_1_title{
+         		color : white;
+         	}
+         	
+         	#rolling_2_title{
+         		color : white;
+         	}
+         	
+         	#rolling_3_title{
+         		color : white;
+         	}
+         	
+         	#rolling_4_title{
+         		margin : 50px 40px 50px 0px;
+         		color : black;
+         		border-radius : 50px;
+         		width : 150px;
+         		height : 50px;
+         		background-color : white;
+         	}
+         	
+         	#fcontent{
+         		width : 100%;
+         		height : 600px;
+         		
+         	}
+         	
+         	#content{
+         		max-width : 1240px;
+         		min-width : 768px;
+         		height : 700px;
+         		margin : auto;
+         	}
+         	
+         	#content1{
+         		width : 50%;
+         		height : 700px;
+         		margin : auto;
+         		float : left;
+         	}
+         	
+        	#content2{
+         		width : 50%;
+         		height : 700px;
+         		margin : auto;
+         		float : left;
+         	}
+         	
+         	#cimage1{
+         		min-width : 600px;
+         		/* width : 600px; */
+         		width : 33%;
+         		height : 300px;
+         		margin : 0;
+         	}
+         	
+         	#cimage2{
+         		min-width : 600px;
+         		/* width : 600px; */
+         		width : 33%;
+         		height : 300px;
+         		
+         	}
+         	
+         	.ctext{
+         		min-width : 500px;
+         		margin : 0;
+         		color : lightgray;
+         		font-size : 14px;
+         	}
+         	
+			#banner2{
+				width:100%;
+				height:450px;
+				background-position: center;
+				background-image: url(../img/main_center_bg.png); 
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			#b2_content1{
+				max-width : 1240px;
+         		min-width : 768px;
+         		height : 450px;
+         		margin : auto;
+			}
+			
+			#b2_content1_1{
+				width : 100%;
+         		height : 450px;
+         		position : relative;
+         		bottom : 100px;
+         		clear : both;
+			}
+			
+			#bimage1{
+				width : 290px;
+				height : 310px;
+				
+				background-position: center;
+				 
+				background-image: url(../img/덴마크.jpg); 
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			#b2_content2{
+				max-width : 1240px;
+         		min-width : 768px;
+         		height : 700px;
+         		margin : auto;
+			}
+			
+			#b2_content2_1{
+				width : 50%;
+         		height : 700px;
+         		position : relative;
+         		bottom : 100px;
+			}
+			
+			#more{
+				float : right;
+				text-decoration : underline;
+			}
+			
+			#more2{clear both;}
+			#fmento_0{
+				width : 100%;
+				height : 90px;
+			}
+			
+			#inner_mento0{
+				max-width: 1240px;
+         		height : 450px;
+         		margin : auto;
+			}
+			
+			#fmento_1{
+				width : 100%;
+				height : 90px;
+			}
+			
+			#inner_mento1{
+				max-width: 1240px;
+         		height : 350px;
+         		margin : auto;
+			}
+			
+			#mentosso{
+				hieght:200px;
+			}
+			#mento1{
+				float:left;
+			}
+			
+			#mento_img1{
+				height : 230px;
+				width : 380px;
+				background-color:red;
+			}
+			
+			#mentotext1{
+				width: 380px;
+			}
+			
+			#mentotext1_1{
+				margin : 0;
+			}
+			
+			#mentotext1_2{
+				font-size : 20px;
+				
+			}
+			
+			 #mento2{
+				margin : 0px 0px 0px 20px;
+				float : left;
+			}
+			
+			#mento_img2{
+				height : 230px;
+				width : 380px;
+			}
+			
+			#mentotext2{
+				width: 380px;
+			}
+			
+			#mentotext2_1{
+				margin : 0;
+			}
+			
+			#mentotext2_2{
+				font-size : 15px;
+			}	
+			
+			#mento3{
+				margin : 0px 0px 0px 20px;
+				float : left;
+			}
+			
+			#mento_img3{
+				height : 230px;
+				width : 380px;
+			}
+			
+			#mentotext3{
+				width: 380px;
+			}
+			
+			#mentotext3_1{
+				margin : 0;
+			}
+			
+			#mentotext3_2{
+				font-size : 15px;
+			}

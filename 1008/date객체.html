@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>date객체</title>
+		<script>
+			var now = new Date();
+			
+			function proc1(){
+				var now2 = new Date(1000000); //1000초가 지난것(1970년 1월 1일 0시 0분으로부터)
+				var now3 = new Date("2019.10.08")
+				var now4 = new Date(2019,0,1); //month에 해당하는 인수는 0부터 시작
+				//설정된 월수보다 1을 크게 값을 얻는다.
+				//07로 설정하면 -> 8월로 표시된다.
+				console.log(now4);
+			}
+			
+			function proc2(){
+				var result = now + "<br>";
+				
+				result += now.toDateString() + "<br>";
+				result += now.toUTCString() + "<br>";
+				result += now.toJSON() + "<br>";
+				result += now.toLocaleString() + "<br>";
+				result += now.toLocaleDateString() + "<br>";
+				result += now.toLocaleTimeString() + "<br>";
+				
+				document.getElementById("res").innerHTML = result;
+			}
+			
+			function proc3(){
+				var day = now.getDay();
+				/*0~6 (0은 일요일 6은 토요일) */
+				//console.log(day);
+				/* 스위치 방법 시작
+				switch(day){
+				case 0: 
+					console.log("오늘은 일요일 입니다.");
+					break;
+				case 1: 
+					console.log("오늘은 월요일 입니다.");
+					break;
+				case 2: 
+					console.log("오늘은 화요일 입니다.");
+					break;
+				case 3: 
+					console.log("오늘은 수요일 입니다.");
+					break;
+				case 4: 
+					console.log("오늘은 목요일 입니다.");
+					break;
+				case 5: 
+					console.log("오늘은 금요일 입니다.");
+					break;
+				case 6: 
+					console.log("오늘은 토요일 입니다.");
+					break;
+				}
+				스위치 방법 종료 */ 
+				var arr = new Array("일요일입니다.", "월요일입니다.", "화요일입니다.", "수요일입니다.", "목요일입니다.", "금요일입니다.", "토요일입니다.");
+				
+				console.log(arr[day]);
+				/*위의 숫자값을 요일로 변환하세요.(switch이용)*/
+				/*결과값 : 오늘은 화요일 입니다.*/
+			}
+			
+			function proc4(){
+				console.log("오늘 날짜 :" + now.getDate());
+				console.log("오늘 월(+1)이번달이 10월이면 9의 값을 가져온다. : " + now.getMonth());
+				console.log("오늘 연도: " + now.getFullYear());
+				//console.log("오늘 연도:" + now.getYear()); // 원래 이거였는데 사라짐
+				console.log("오늘 시간(0~23) : " + now.getHours());
+				console.log("오늘 분(0~59) : " + now.getMinutes());
+				console.log("오늘 초(0~59) : " + now.getSeconds());
+				
+				console.log("오늘 밀리세컨드(0~999) : " + now.getMilliseconds());
+				console.log("오늘의 경과시간(밀리세컨드 단위), 기준은 1970년 1월 1일" + now.getTime());
+			}
+			
+			/* let date0 = new Date(2010, 1, 1);
+			let date1 = new Date(2019, 10, 6);
+			let date2 = new Date(2019, 10, 7);
+			sum =  ((date2-date0) / 1000) / 86400;
+			//document.write("기준일자 :" + ((date2 - date1)/1000) + "<br>");
+			document.write("2019-2010 :" + sum + "일 <br>"); */
+			
+			function proc5(){
+				var date0 = new Date(1992, 3, 19);
+				var date1 = new Date(2019, 10, 08);
+				var sum = ((date1-date0) / 1000) / 86400;
+				console.log("내가 태어난 날이 몇일 지났나? "+ sum + "일" );
+			}
+			
+			/* function proc6() {
+				var date2 = new Date();
+				var date3 = new Date(8640000); //1000초가 지난것(1970년 1월 1일 0시 0분으로부터)
+				var sum = date2 + date3;
+				console.log("앞으로 100일 후는? "+ sum.getDate() + "일" );
+			} */
+			
+			function proc6(){
+				var today = new Date();
+				var _100day = new Date(today.getTime()+(100*24*3600*1000));
+				console.log(_100day);
+			}
+			
+			function proc7(){
+				var selDate = document.getElementById("pdate").value;
+				var weeksago = new Date(2019,09,01); //7일 전. 
+				var now = new Date();  // 현재 시간
+				selDate = new Date(selDate);
+				console.log(selDate)
+				
+				//var Day7 = now.getTime() - (3600*1000*24*7);
+				/*오늘(2019/10/8) 기준으로 환불일이 7일이내의 것만 가능하다.
+				구입한 날을 셀렉트 하여 환불이 가능한지 / 아닌지 확인하세요.
+				날짜~ 2019년 10월2일 ~ 10월 8일 까지는 "환불이 가능합니다."
+				이외에 날짜는 "환불이 불가능합니다."
+				오늘 이후의 날짜를 셀렉하면 "다시 선택해주세요"
+				*/
+				if( selDate > now ){
+					document.getElementById("res").innerHTML = "다시 선택해주세요.";
+				} else if ( now - selDate  < 604800000){
+					document.getElementById("res").innerHTML = "환불이 가능합니다.";
+				} else if ( now - selDate  > 604800000){
+					document.getElementById("res").innerHTML = "환불이 불가능합니다.";
+				}
+			}
+			
+			window.onload = function() {
+				//proc2();
+				alert((new Date(2019,9,0)).getDate());
+				proc7();
+			}
+		</script>
+	</head>
+	
+	<body>
+		
+		
+		
+		<input type="date" id="pdate">
+		<button type="button" onclick="proc7();">환불</button>
+		
+		<div id="res">환불이 가능한가?</div>
+	</body>
+</html>

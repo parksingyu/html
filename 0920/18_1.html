@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>18페이지 </title>
+		<style>
+		.scrollabletextbox{
+			overflow:scroll;
+		}
+		</style>
+	</head>
+	
+	<body>
+		<h2>이메일 전송 화면</h2>
+		이름 : <input type="txt" id = "name"> <br><br>
+		이메일 주소: <input type="email" name="email"><br><br>
+		
+		내용: <br><textarea class="scrollabletextbox" name=txtComment cols=70 rows=4></textarea><br>
+		<input type="submit" value="전송">
+		<input type="button"  value="재설정" onclick="javascript:history.go(0);">
+	</body>
+</html>

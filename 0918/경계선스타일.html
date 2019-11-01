@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>경계선 스타일</title>
+		<style>
+			.green{
+				border : 1px solid black;
+				border-color: green;
+				
+			}
+			
+			p.round{
+				border-radius: 10px;
+				/*border : 5px;*/
+			}
+			
+			.di{
+				height : 100px;
+				width : 100px;
+				background-color : green;
+				font : italic 10pt arial, sans-serif;
+				text-align : center;
+				box-shadow:20px 10px 5px #ff8000;  /* 좌우, 상하, 블러, 색상순입니다.*/
+			}
+			
+			#target1{
+				width:100px;
+				height:100px;
+				background-color : powderblue;
+			}
+			
+			#target2{
+				width:100px;
+				height:100px;
+				background-color : pink;
+			}
+			
+			#target3{
+				width:100px;
+				height:100px;
+				background-color : yellow;
+			}
+		
+		</style>
+	</head>
+	
+	<body>
+		  
+		<p class="green" style="border-style:solid;">p태그입니다.</p>
+		<p class="round" style="border-style:dotted;">p태그입니다.</p>
+		<p style="border-style:dashed;">p태그입니다.</p>
+		<p style="border-style:double;">p태그입니다.</p>
+		<p style="border:10px; border-style:groove;">p태그입니다.</p>
+		<p style="border:10px; border-style:ridge;">p태그입니다.</p>
+		<p style="border:10px; border-style:inset;">p태그입니다.</p>
+		<p style="border:10px; border-style:outset;">p태그입니다.</p>
+		<p style="border-style:none;">p태그입니다.</p>
+		
+		<!--   class 지정해서 높이 100, 가로 100 녹색으로 만들어주세요*/ -->
+		<div class="di"> div입니다. </div>
+		<div id="target1"></div>
+		<p id="target2"></p>
+		<span id="target3">강의실 안전수칙</span>
+	</body>
+</html>

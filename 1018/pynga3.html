@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>규칙 검사</title>
+		<script>
+			function proc1(){
+				
+ 				//1. 아이디 규칙 검사
+				var f = document.ff;
+				idValue = f.id.value; //입력한 값
+				idReg = /^[a-z][a-zA-Z0-9]{7,9}$/; //정규식 -> 소문자로 시작,
+				if(!(idReg.test(idValue))){
+					alert("아이디 오류");
+					f.id.focus();
+					return;
+				}
+				
+				//2. 비밀번호 규칙 검사
+				passwordValue = f.pass.value; //입력한 값
+				passwordReg = /[a-zA-Z0-9]{8,15}$/; //정규식 -> 소문자로 시작,
+				if(!(passwordReg.test(passwordValue))){
+					alert("패스워드 오류");
+					f.pass.focus();
+					return;
+				}
+				
+				//2-1. 비밀번호 일치 검사
+				pwcheckValue = f.pwch.value;
+				console.log(pwcheckValue);
+				if(pwcheckValue != passwordValue){
+					alert("비밀번호가 일치하지 않습니다.");
+					f.pwch.focus();
+					return;
+				}
+				
+				//3. 이름 규칙 검사
+				nameValue = f.nm.value; //입력한 값
+				nameReg = /^[가-힣]{2,5}$|^[a-zA-Z]{5,15}$/; //정규식 -> 소문자로 시작,
+				if(!(nameReg.test(nameValue))){
+					alert("이름 오류");
+					f.nm.focus();
+					return;
+				}
+				
+				//4. 전화번호 규칙 검사
+				phoneValue = f.pn.value; //입력한 값
+				phoneReg = /^\d{3}-\d{3,4}-\d{4}$/; //정규식 -> 소문자로 시작,
+				if(!(phoneReg.test(phoneValue))){
+					alert("전화번호 오류");
+					f.pn.focus();
+					return;
+				}
+				
+				//5. 이메일 규칙 검사
+				emailValue = f.ema.value; //입력한 값
+				emailReg = /^[0-9a-zA-Z_-]+@[0-9a-zA-Z_-]+(\.[0-9a-zA-Z]+){1,2}$/; //정규식 -> 소문자로 시작,
+				if(!(emailReg.test(emailValue))){
+					alert("이메일 오류");
+					f.ema.focus();
+					return;
+				}
+			}
+		</script>
+		<style>
+			form{
+				width : 500px;
+				margin : auto;
+			}
+			
+			legend{
+				background-color : lightblue;
+				padding : 10px;
+				border-radius : 10px;
+			}
+			
+			#fs{
+				width : 450px;
+				margin : auto;
+			}
+			
+			#fs2{
+				width : 363px;
+				border : 8px solid lightgray;
+			}
+			
+			#bt{
+				width : 250px;
+				margin : auto;
+			}
+			
+			#jb{
+				background-color : white;
+				color : blue;
+				border-radius : 10px;
+				border : 1px solid blue;
+			}
+			
+			#sd{
+				width : 100px;
+				height : 50px;
+				border-radius : 30px;
+				font-size : 15px;
+				background-color : blue;
+				color : white;
+			}
+			
+			#cc{
+				width : 100px;
+				height : 50px;
+				border-radius : 30px;
+				font-size : 15px;
+				background-color : black;
+				color : white;
+			}
+			
+			td input{
+				border-radius : 10px;
+				background-color : rgb(245,245,245);
+				color : gray;
+				height : 20px;
+				line-height : 30px;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+	<!-- 1. 입력값(문자열). match(패턴문자/정규식) =>
+	입력값에서 패턴정규식에 맞는 값이 있느냐?
+	있으면 문자열 (여러개일경우 문자열 배열)을 리턴하고 없으면 null을 리턴한다.
+	
+	2. 정규식패턴문자.test(입력문자열) ==>
+	입력값에서 패턴정규식에 맞는 값이 있느냐?
+	입력문자열이 정규식에 맞으면 true, 맞지 않으면 false를 리턴한다.
+	
+	3. 정규식 패턴문자. exec(입력문자열) ==>
+	입력값에서 패턴정규식에 맞는 값이 있느냐?
+	있으면 문자열(여러개일경우 문자열 배열)을 리턴하고 없으면 null을 리턴한다. -->
+		<form name="ff">
+			<div id="fs">
+			<fieldset id="fs2">
+				<legend>회원정보입력</legend>
+				<table>
+					<tr>
+						<td>아이디:</td>
+						<td><input type="text" name="id" placeholder=" Enter id"></td>
+						<td><button id="jb">중복검사</button></td>
+					</tr>
+					<tr>
+						<td colspan = 3> <hr> </td>
+					</tr>
+					<tr>
+						<td>패스워드:</td>
+						<td><input type="password" name="pass" placeholder=" Enter password"></td>
+					</tr>
+					<tr>
+						<td colspan = 3> <hr> </td>
+					</tr>
+					<tr>
+						<td>패스워드 확인:</td>
+						<td><input type="password" name="pwch" placeholder=" Enter password"></td>
+					</tr>
+					<tr>
+						<td colspan = 3> <hr> </td>
+					</tr>
+					<tr>
+						<td>이름:</td>
+						<td><input name="nm" type="text" placeholder=" 이름"></td>
+					</tr>
+					<tr>
+						<td colspan = 3> <hr> </td>
+					</tr>
+					<tr>
+						<td>성별:</td>
+						<td><input type="radio" name="gender" value="여자" checked>여자&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="남자" checked>남자</td>
+					</tr>
+					<tr>
+						<td colspan = 3> <hr> </td>
+					</tr>
+					<tr>
+						<td>휴대폰 번호:</td>
+						<td><input type="text" name="pn" placeholder=" 010-1234-5678" ></td>
+					</tr>
+					
+					<tr>
+						<td colspan = 3> <hr> </td>
+					</tr>
+					<tr>
+						<td>이메일:</td>
+						<td><input type="text" name="ema" placeholder=" abcd123@gmail.com"></td>
+					</tr>
+				</table>
+			</fieldset>
+			</div>
+			<br>
+			<div id="bt"><button id = "sd" onclick="proc1();">전송</button> <button id="cc" onclick="javascript:history.go(0);">취소</button></div>
+		</form>
+	</body>
+</html>

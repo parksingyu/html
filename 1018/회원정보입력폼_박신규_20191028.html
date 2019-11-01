@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>회원정보 입력폼</title>
+	<style>
+		form{
+			background-color: rgb(231,234,237);
+			padding : 10px 0px 10px 10px;
+		}
+	</style>
+	</head>
+	<body>
+		<form style="width : 600px">
+			<h2>회원정보 입력폼</h2>
+			<fieldset>
+				<legend>회원정보 입력</legend>
+				<table>
+					<tr>
+						<td>아이디</td>
+						<td><input type="text">&nbsp;<button>중복검사</button></td>
+					</tr>
+					<tr>
+						<td>이름</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>생년월일</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>비밀번호</td>
+						<td><input type="password"></td>
+					</tr>
+					<tr>
+						<td>비밀번호 확인</td>
+						<td><input type="password"></td>
+					</tr>
+					<tr>
+						<td>성별</td>
+						<td><input type="radio" name="gender" value="여자" checked>여성&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="남자" checked>남성</td>
+					</tr>
+					<tr>
+						<td>전화 번호</td>
+						<td><input type="text"></td>
+						<td> </td>
+					</tr>
+					<tr>
+						<td>이메일</td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td>우편번호</td>
+						<td><input type="text">&nbsp;<button>우편번호검색</button></td>
+					</tr>
+					<tr>
+						<td>주소</td>
+						<td colspan=6><input type="text" size=50;></td>
+					</tr>
+					<tr>
+						<td>상세주소</td>
+						<td colspan=6><input type="text" size=50;></td>
+					</tr>
+				</table>
+			</fieldset>
+			<br>
+			<input type="submit" value="제출"> <input type="button" value="초기화" onclick="javascript:history.go(0);">
+		</form>
+	</body>
+</html>

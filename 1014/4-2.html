@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>4-2</title>
+		<script>
+			/* 문제 4-2)
+			   주민번호를 입력받아 주민번호의 유효성을 검사하는 프로그램을 작성하세요
+			   (입력은 prompt로 받는다)
+			   -> 반드시 함수를 사용하기 (return 구문 사용)
+			   주민번호 : ABCDEF-GHIJKLM(return 구문 사용하기)
+			   1. A*2+B*3+C*4.......+H*9 + I*2+....+L*5
+			   2. 1번의 합을 11로 나눈 나머지를 구한다.
+			   3. 11에서 2번의 결과를 뺀다.
+			   4. 3번의 결과가 0~9라면 값 그대로, 10이면 0, 11이면 1로 반환
+			   5. 4번의 결과와 M자리의 값이 같으면 맞는번호이다.
+			*/
+				
+			function table1(){
+			   var jm = prompt("주민번호를 입력해주세요");
+			   var a = 2;
+			   var b = 0;
+			   var c = 11;
+			   var sum = 0;
+			   var result;
+			   
+			   for (var i = 0; i<jm.length-1; i++){  // jm.length : 14
+					if (jm[i] == "-"){ // jm[i]가 "-" 를 만나면 패스합니다
+						
+					} else { 
+						if ( i <= 6 ){ //A*2+B*3+C*4+D*5+E*6+F*7
+						sum = sum + jm[i] * (i+2);  
+					} else if ( i == 7 || i == 8){ //G*8 + H*9
+						sum = sum + jm[i] * (i+1);
+					} else {
+				   		sum = sum + jm[i] * a;  //I*2+....+L*5
+						a++; // a는 2부터 증가합니다.
+					}
+				   }
+			   }
+			   b = sum % 11;  // 2. 1번의 합을 11로 나눈 나머지를 구한다.
+			   c = c - b;     // 3. 11에서 2번의 결과를 뺀다.
+			   if ( c == 10){ 
+				   c = 0;
+			   } else if ( c == 11 ){
+				   c = 1; 
+			   }
+			   
+			   if ( c == jm[13]){  //5. 4번의 결과와 M자리의 값이 같으면 맞는번호이다.
+				   result = "맞는 주민번호 입니다.";
+			   } else {
+				   result = "틀린 주민번호 입니다.";
+			   }
+			   return result;
+		   }
+
+		window.onload = function() {
+			document.write(table1());
+		}
+		</script>
+</head>
+<body>
+	<div id="jumin"></div>
+</body>
+</html>

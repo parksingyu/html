@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function chColor(c){
+				document.body.style.backgroundColor = c;
+			}
+			
+			function chStr(){
+				var txt = document.getElementById("str").value;
+				document.getElementById("str").value = txt.toLowerCase();
+			}
+			
+			function chStr2(){
+				var txt = document.getElementById("str2").value;
+				document.getElementById("str2").value = txt.toUpperCase();
+			}
+			
+			function OnMDown(e){
+				e.style.backgroundColor = "pink";	
+			}
+			
+			function OnMUp(e){
+				e.style.border = "2px dashed blue";
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		<h1> 이벤트 처리 </h1>
+		<form method="post">
+			<input type="radio" name="C1" value="v1" onclick="chColor('lightblue')">파랑색
+			<input type="radio" name="C1" value="v2" onclick="chColor('lightgreen')">녹색
+			<input type="radio" name="C1" value="v3" onclick="chColor('pink')">분홍색
+		</form>
+		
+		<div>
+			<h2> onchange 이벤트 </h2>
+			영어단어 : <input type="text" id="str" onchange="chStr()">
+			<p>입력 필드를 벗어나면 소문자로 변경(onchange실행)</p>
+			<br>
+			<h2> onchange 이벤트 </h2>
+			영어단어 : <input type="text" id="str2" onchange="chStr2()">
+			<p>입력 필드를 벗어나면 대문자로 변경(onchange실행)</p>
+		</div>
+		
+		<div>
+			<button onmousedown="OnMDown(this);"> onmouseDown눌러보세요 </button>
+			<button onmouseup="OnMUp(this);"> onmouseUp눌러보세요 </button>
+		</div>
+			
+	</body>
+</html>

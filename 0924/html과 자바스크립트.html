@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>html과 자바스크립트</title>
+		<style>
+			#test{
+				color : blue;
+			}
+		</style>
+		<script>
+			/*
+			var age = prompt("나이를 입력하세요.", "만 나이로 입력합시다");
+			
+			document.write(age + "세 입니다.");
+			*/
+			
+			/*
+			var x, y;
+			
+			x = prompt("정수를 입력하세요"); 
+			//프롬프트로 받으면 문자열 "10"으로 들어온다. 이 "10"을 곱하기 1 해주면 숫자형으로 바뀐다.
+			y = prompt("정수를 입력하세요"); 
+			
+			document.write("합은 " + (x*1+y*1) + "입니다.<br>");
+			document.write("합은 " + (parseInt(x) + parseInt(y)) + "입니다.");
+			*/
+			
+			function func(){
+				/*
+				alert("클릭했네요!");
+				var str = prompt("값을 입력하세요");
+				document.write(str);
+				*/
+				var e = document.getElementById("test").style.background = "red";
+				//e.style.color = "lightgreen";
+				/*
+				if (e.style.color == "lightgreen"){
+					e.style.color = "red";		
+				} else {
+					e.style.color = "lightgreen";
+				}
+				*/
+				//document.body.style.backgroundColor="black";
+				if (document.bgColor == "pink"){
+					document.bgColor = "powderblue";
+					e.style.color = "red";
+				} else {
+					document.bgColor = "pink";
+					e.style.color = "lightgreen";
+				}
+				
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		<h1 id = "test"> This is a heading. </h1>
+		<button type="button" onclick="func();">클릭하세요.</button>	
+	</body>
+</html>

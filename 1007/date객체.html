@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>date객체</title>
+	</head>
+	<script>
+		window.onload = function(){
+		//date()객체 
+		var now1 = new Date();   //현재 시간
+		var now2 = new Date(10000000000); //0 10개 -> 1000 : 1초
+		var now3 = new Date("2000.1.2"); 
+		var now4 = new Date(2000,1,2,1,20,30);
+		var now5 = now1.toLocaleString(); // 현재 시간
+		var now6 = now2.toLocaleString(); //1970년 4월 27일 오전 2:46:40
+		var now7 = now3.toLocaleString(); // 2000년 1월 2일 오전 12:00
+		var now8 = now4.toLocaleString(); //2000년 2월 2일 오전 1시 20분 30초
+		/* var s = (now1 - now4) / 8600;
+		
+		document.write(s); */
+		document.getElementById("result").innerHTML = now1+"<br>";
+		document.getElementById("result").innerHTML += now2+"<br>";
+		document.getElementById("result").innerHTML += now3+"<br>";
+		document.getElementById("result").innerHTML += now4+"<br>";
+		document.getElementById("result").innerHTML += now5+"<br>";
+		document.getElementById("result").innerHTML += now6+"<br>";
+		document.getElementById("result").innerHTML += now7+"<br>";
+		document.getElementById("result").innerHTML += now8+"<br>";
+		document.getElementById("result").innerHTML += now9+"<br>";
+		}
+		document.write("<br><br>");
+		
+		
+				/*
+			2010년 1월 1일 부터 오늘까지의 날짜수를 계산하는 프로그램을 작성하세요
+			소수점은 parseInt()를 이용해서 버린다.
+		*/
+		
+		let date0 = new Date(2010, 1, 1);
+		let date1 = new Date(2019, 10, 6);
+		let date2 = new Date(2019, 10, 7);
+		sum =  ((date2-date0) / 1000) / 86400;
+		//document.write("기준일자 :" + ((date2 - date1)/1000) + "<br>");
+		document.write("2019-2010 :" + sum + "일 <br>");
+	</script>
+	
+	<body>
+		<div id="result"> </div>
+		
+		<!-- <p id="x"> </p>
+		<script>
+			document.getElementByID("x").innerHTML = "html 문구 넣기";
+		</script> -->
+		
+	</body>
+</html>

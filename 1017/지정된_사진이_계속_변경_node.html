@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM객체</title>
+		
+	</head>
+	
+	<body>
+		 <div id="target"><img id="img1"></div>
+		<script>
+		
+		window.onload = function(){
+			defaultimg();
+		}
+		
+		function defaultimg(){
+			document.getElementById("img1").src = "../img/호랑이.png"
+			start();
+		}
+		
+		function start(){
+			id = setInterval(rollingImg,1000);
+		}
+			
+		var i= 0;
+			function rollingImg(){
+				imgarr = ["컴퓨터.png", "식품.png", "호랑이.png", "구름.png", "커피.png"];
+				var parent = document.getElementById("target");
+				parent.innerHTML = "";
+				
+				imgC = document.createElement("img");  //<img>태그를 만든다
+				
+				if(i>=imgarr.length){
+					i = 0;
+				}
+				imgC.src = "../img/" + imgarr[i++]; //<img src = ''
+				imgC.width = 300;
+				
+				parent.appendChild(imgC);
+			}
+			
+			function changeImg(){
+				id = setInterval(rollingImg, 1000);
+			}
+		</script>
+</html>

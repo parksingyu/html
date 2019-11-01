@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열 및 함수</title>
+		<style>
+			p{
+				color : red;
+			}
+			
+		
+		</style>
+		<script>
+			/*
+				배열을 생성하는 방법
+				1. var fruits = ["banana", "apple", "orange"];
+			
+				2. var fruits = new Array();
+				
+				3. var fruits = new Array();
+					fruits[0] = "banana";
+					fruits[1] = "apple";
+					fruits[2] = "orange";
+					
+				함수 만들기
+				1. 파라미터가 있고 반환 값도 있는 함수
+				function 함수명(파라미터1, 파라미터2....){
+					코딩구간;
+					return 반환값;
+				}
+				
+				2. 파라미터가 없고 반환값은 있는 함수
+					function 함수명(){
+					
+					return 반환값;
+				}
+				
+				3. 파라미터가 있고 반환값은 없는 함수
+					function 함수명(파라미터1, 파라미터2....){
+					명령문..;
+				}
+				
+				4. 파라미터가 없고 반환값도 없는 함수
+					function 함수명(){
+						명령문;
+				}
+				
+				함수호출
+				
+				function 함수명(파라미터1, 파라미터2...){
+					명령문;
+				}
+				
+				함수명(파라미터1, 파라미터2...); //함수호출
+			*/
+			
+				function sub(a, b){
+					return a+b;
+				}
+				
+				var sum = sub(1,2);
+				//document.write(sum);
+				
+				window.onload = function(){
+					document.getElementById("test").innerHTML = sum;
+				}
+		</script>
+	</head>
+	
+	<body>
+		<p id="test"></p>
+	</body>
+</html>

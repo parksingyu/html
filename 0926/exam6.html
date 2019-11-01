@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>문제 6</title>
+		<script>
+	
+		while(true){
+			var x = prompt("첫번째 값을 입력하세요")
+			var y = prompt("두번째 값을 입력하세요")
+			 if ( x == 0 && y ==0){
+				 alert("실행을 종료합니다.")
+				break;
+			} else if ((x*1)+(y*1) >= 100 ){
+				alert("결과값은 "+((x*1)+(y*1))+" 입니다.");
+				document.write(((x*1)+(y*1))+"<br>");
+				continue;
+			} else if ((x*1)+(y*1) < 100){
+				alert("값이 100 이하입니다.");
+				continue;
+			}	
+		}
+		</script>
+	</head>
+	
+	<body>
+		
+	</body>
+</html>

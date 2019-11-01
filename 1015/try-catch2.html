@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Number add</title>
+		<script>
+			function add(){
+				try{
+					var mess = "";
+					var minus;
+					var sum = 0;
+					
+					var num1 = parseInt(document.getElementById("number1").value);
+					var num2 = parseInt(document.getElementById("number2").value);
+					if (num1 == 0){
+						mess = "값을 입력하세요";
+						document.getElementById("msg").innerHTML = mess;
+					} else if (num2 >= num1){
+						for ( var i = num1; i<= num2; i++){
+							sum = sum + i;
+						}
+						mess = "두수 사이의 합은 "+ sum + " 입니다.";
+						document.getElementById("msg").innerHTML = mess;
+					} else if ( num2 < num1){
+						mess = "다시 입력하세요";
+						document.getElementById("msg").innerHTML = mess;
+					}
+				} catch(e){
+					alert("다음과 같은 오류가 발생함 : " + e.message);
+				}
+				
+				//1) 작성한 number1, number2 값 가져오기
+				//2) number2값이 number1값보다 작으면 다시 수를 입력하라는 메시지를 msg에 출력
+				//3) number2값이 number1값과 같거나 더 크면 두 수 사이의 합을 msg에 출력
+				
+				//try-cach문 이용
+			}
+			   window.onload = function() {
+					add();
+				}
+		</script>
+	</head>
+	<body>
+		<h1>Number Add</h1>
+		<p> 1부터 100사이의 숫자를 입력하세요</p>
+		<input type="text" id="number1">
+		<input type="text" id="number2">
+		<button onclick="add();">두 수 사이의 합</button>
+		<p id="msg"> </p>
+	</body>
+</html>
